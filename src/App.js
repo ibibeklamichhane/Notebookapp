@@ -2,6 +2,7 @@ import "./App.css";
 import Navbar from "./components/Navbar.js";
 import About from "./components/About.js";
 import Home from "./components/Home.js";
+import Alert from "./components/Alert.js";
 
 import NoteState from "./context/notes/NoteState";
 
@@ -11,6 +12,7 @@ function App() {
     <NoteState>
       <Router>
         <Navbar />
+        <Alert message="good" />
         <Routes>
           <Route exact path="/" element={<Home />} />
 
