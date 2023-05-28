@@ -14,3 +14,5 @@ module.exports = connectToMongo;
 
 //const mongoURI = "mongodb://localhost:27017/inotebook?readPreference=primaryPreferred"
 //mongodb://localhost:27017/
+
+//mongodb://localhost:27017/

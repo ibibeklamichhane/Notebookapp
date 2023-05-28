@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar.js";
 import About from "./components/About.js";
 import Home from "./components/Home.js";
 import Alert from "./components/Alert.js";
+import Login from "./components/Login";
 
 import NoteState from "./context/notes/NoteState";
 
@@ -17,6 +18,8 @@ function App() {
           <Route exact path="/" element={<Home />} />
 
           <Route exact path="/about" element={<About />} />
+          <Route exact path="/login" element={<Login />} />
+          <Route exact path="/signup" element={<Login />} />
         </Routes>
       </Router>
     </NoteState>

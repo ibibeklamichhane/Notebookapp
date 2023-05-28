@@ -76,7 +76,7 @@ router.put('/updatenote/:id', fetchuser,async (req,res) =>{
 
 );
 
-//Route 1:Delete  all the  Notes using:DELETE "/api/notes/deletenote".Login required
+//Route 41:Delete  all the  Notes using:DELETE "/api/notes/deletenote".Login required
 
 router.delete('/deletenote/:id', fetchuser,async (req,res) =>{
     try {
@@ -86,9 +86,9 @@ router.delete('/deletenote/:id', fetchuser,async (req,res) =>{
 
     if (note.user.toString() !== req.user.id) {
 
-        return res.status( 404).send("Not Allowed")
+        return res.status( 401).send("Not Allowed")
 }
-    note = await Note.findByIdAndUpdate(req.params.id)
+    note = await Note.findByIdAndDelete(req.params.id)
     res.json({"success":"Note has been deleted"});
 }
         
