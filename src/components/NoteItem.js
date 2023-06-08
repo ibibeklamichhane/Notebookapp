@@ -11,10 +11,12 @@ const NoteItem = (props) => {
 
   
   return (
+   
     <div className=" col-md-3">
       <div className="card">
         <div className="card-body">
           <h5 className="card-title">
+           
             {note.title}
             <i
               className="fa fa-trash-alt mx-2"
@@ -30,6 +32,7 @@ const NoteItem = (props) => {
         </div>
       </div>
     </div>
+   
   );
 };
 

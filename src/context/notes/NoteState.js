@@ -14,8 +14,9 @@ const NoteState = (props) => {
 
       headers: {
         "Content-Type": "application/json",
-        "auth-token":
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNlNzE0MTE4ZDMyMGUwNDE5ZWVjMGY4In0sImlhdCI6MTY3NjA4ODYyMH0.k9Q90VyI0NEiRVodH__S8zTVBHjWcl3tVUYRVH6ceuM",
+        "auth-token":localStorage.getItem("token"),
+        
+          
       },
     });
 
