@@ -1,12 +1,14 @@
-NoteBook App created with ReactJS and NodeJS
+#NoteBook App created with ReactJS and NodeJS
 
-Functionality:
+##Functionality:
 User login/Signup Authentication
 Separate notes Acess to individual users
 Adding note
 Update Note
 Delete Note
-.
+
+###Screenshots
+
 ![Screenshot from 2023-06-08 11-11-02](https://github.com/ibibeklamichhane/Notebookapp/assets/46773730/952ee1eb-eacf-45ee-a52a-cc1710e6a3e6)
 
 ![Screenshot from 2023-06-08 10-55-34](https://github.com/ibibeklamichhane/Notebookapp/assets/46773730/fa8a3e74-6b5a-4a0c-b230-5fa9976df725)
