@@ -7,8 +7,6 @@ const NoteItem = (props) => {
   const { note, updateNote } = props;
 
 
-
-
   
   return (
    

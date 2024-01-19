@@ -2,7 +2,7 @@ import React ,{ useState } from 'react'
 
 import {useNavigate} from "react-router-dom";
 
-const SignUp = (props) => {
+const SignUp = () => {
 
   const [credentials,setCredentials]=useState({name:"",email:"",password:"",cpassword:""})
     let navigate = useNavigate();
@@ -10,24 +10,29 @@ const SignUp = (props) => {
     const handleSubmit = async (e) => {
       e.preventDefault();
       const{name,email,password} = credentials;
+
+
       const response = await fetch ("http://localhost:5000/api/auth/createuser",{
          method:'POST',
          headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
     },
     body: JSON.stringify({name,email,password}),
   });
     
   const json = await response.json()
   console.log(json);
+
   if(json.success){
+
   //save the auth token and redirect it
-  localStorage.setItem('token' , json.authtoken);
-  navigate("/")
-  alert("Accounts was created successfully","success")
+    localStorage.setItem('token' , json.authtoken);
+    navigate("/")
+  
   }
+
   else{
-    alert("Invalid Credentials","danger")
+    alert("Invalid Credentials")
   }
 }
  const onChange = (e) => {
@@ -43,24 +48,24 @@ const SignUp = (props) => {
       
       <div className="mb-3">
         <label htmlFor="name " className="form-label">Name</label>
-        <input type="text" className="form-control " id="name"  onChange= {onChange } aria-describedby="emailHelp" placeholder="Name"/>
+        <input type="text" className="form-control" id="name"  name= "name" onChange= {onChange } aria-describedby="emailHelp" placeholder="Name"/>
         
       </div>
       <div className="mb-3">
         <label htmlFor="email" className="form-label">Email address</label>
-        <input type="email" className="form-control form-control-sm" id="email" onChange= {onChange } aria-describedby="emailHelp" placeholder="Email"/>
+        <input type="email" className="form-control " id="email" name= "email"  onChange= {onChange } aria-describedby="emailHelp" placeholder="Email"/>
         
       </div>
       <div className="mb-3">
         <label htmlFor="password" className="form-label">Password</label>
-        <input type="password" className="form-control " id="exampleInputPassword1" placeholder="Password"/>
+        <input type="password" className="form-control " id="password" name= "password" onChange= {onChange } placeholder="Password"/>
       </div>
       <div className="form-group col-xs-4">
         <label htmlFor="cpassword" className="form-label">Password</label>
-        <input type="password" className="form-control" id="cpassword" placeholder=" confirm Password"/>
+        <input type="password" className="form-control" id="cpassword" name="cpassword" onChange= {onChange }  placeholder=" confirm Password"/>
       </div>
 
-      <button type="submit" className="btn btn-primary" onSubmit={handleSubmit}>Submit</button>
+      <button type="submit" className="btn btn-primary">Submit</button>
  
 </form>
 </div>

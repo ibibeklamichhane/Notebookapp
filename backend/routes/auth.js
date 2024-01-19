@@ -39,7 +39,7 @@ router.post('/createuser',
 
       password: secPassword,
       email: req.body.email,
-    })
+    });
     const data ={
       user:{
         id:user.id
@@ -55,13 +55,13 @@ router.post('/createuser',
       
     //res.json({'Nice':"nice"})
     success = true;
-    res.json({success,authtoken})
+    res.json({ success,authtoken })
    //res.json(user);
   }
   //catch errors
   catch(error) {
-    console.log(error.message);
-    res.status(500).send("some Error occured");
+    console.error(error.message);
+    res.status(500).send("Internal Server Error");
   }
 } );
 
