@@ -40,38 +40,78 @@ const SignUp = () => {
 
  }
     
-  return(
-  
-    <div className="container">
-    
-      <form onSubmit={handleSubmit}> 
-      
+ return (
+  <div className="d-flex justify-content-center align-items-center vh-100 bg-gray-300">
+    <form onSubmit={handleSubmit} className="bg-success shadow-md rounded-3 px-5 py-4 mb-4">
+      <h2 className="text-2xl mb-4 text-white">Sign Up</h2>
       <div className="mb-3">
-        <label htmlFor="name " className="form-label">Name</label>
-        <input type="text" className="form-control" id="name"  name= "name" onChange= {onChange } aria-describedby="emailHelp" placeholder="Name"/>
-        
+        <label htmlFor="name " className="form-label text-white">Username</label>
+        <input
+          className="form-control"
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Username"
+          value={credentials.name}
+          onChange={onChange}
+          required
+        />
       </div>
       <div className="mb-3">
-        <label htmlFor="email" className="form-label">Email address</label>
-        <input type="email" className="form-control " id="email" name= "email"  onChange= {onChange } aria-describedby="emailHelp" placeholder="Email"/>
-        
+        <label htmlFor="email" className="form-label text-white">Email</label>
+        <input
+          className="form-control"
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Email"
+          value={credentials.email}
+          onChange={onChange}
+          required
+        />
       </div>
       <div className="mb-3">
-        <label htmlFor="password" className="form-label">Password</label>
-        <input type="password" className="form-control " id="password" name= "password" onChange= {onChange } placeholder="Password"/>
+        <label htmlFor="password" className="form-label text-white">Password</label>
+        <input
+          className="form-control"
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Password"
+          value={credentials.password}
+          onChange={onChange}
+          required
+        />
       </div>
-      <div className="form-group col-xs-4">
-        <label htmlFor="cpassword" className="form-label">Password</label>
-        <input type="password" className="form-control" id="cpassword" name="cpassword" onChange= {onChange }  placeholder=" confirm Password"/>
+      <div className="mb-3">
+          <label htmlFor="cpassword" className="form-label text-white">Confirm Password</label>
+          <input
+            className="form-control"
+            type="password"
+            id="cpassword"
+            name="cpassword"
+            placeholder="Confirm Password"
+            value={credentials.cpassword}
+            onChange={onChange}
+            required
+          />
+        </div>
+      <div className="d-flex justify-content-center">
+        <button
+          className="btn btn-primary"
+          type="submit"
+        >
+          Sign Up
+        </button>
       </div>
+      <div className="d-flex justify-content-center text-sm text-dark mt-3">
+        Already a user? 
+       
+      </div>
+    </form>
+  </div>
+);
 
-      <button type="submit" className="btn btn-primary">Submit</button>
- 
-</form>
-</div>
-
-
-  )
 }
 
 

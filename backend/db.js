@@ -5,7 +5,11 @@ const connectToMongo = () => {
         console.log("Connected to Mongo Successfully");
     })
 }
+
 module.exports = connectToMongo;
+
+
+
 
 //mongodb://localhost:27017/?readPreference=primaryPreferred
 //mongodb://localhost:27017/?readPreference=primaryPreferred

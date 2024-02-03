@@ -18,8 +18,6 @@ try {
     
 }
 
-
-
 }
 
 module.exports = fetchuser;
