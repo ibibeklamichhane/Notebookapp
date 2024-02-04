@@ -11,6 +11,7 @@ app.use(cors())
 app.use(express.json())
 
 //available routes
+app.get('/',(req,res) => res.status(200).json({message:'Hello World'}))
 app.use ('/api/auth',require('./routes/auth'))
 app.use ('/api/notes',require('./routes/notes'))
 
